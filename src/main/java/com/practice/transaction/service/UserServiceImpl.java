@@ -20,8 +20,6 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@Transactional(readOnly = true)
 	public List<UserInfo> getUsers() {
-		final List<UserInfo> users = repository.findAll();
-		users.forEach(u -> u.setName("changed -" + u.getName()));
 		return repository.findAll();
 	}
 
