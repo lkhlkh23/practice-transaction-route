@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
@@ -19,6 +20,7 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
+@Profile("local")
 public class DataSourceConfig {
 
 	@Bean("masterDataSource")
